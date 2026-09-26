@@ -64,9 +64,6 @@
 /* ---------- 2. BASE ---------- */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
-/* grid/flex items default to min-width:auto (= their content's natural width), which can force
-   a track to stay wide and overflow even after a mobile rule collapses it to a single column.
-   This lets every multi-column layout actually shrink to fit small screens. */
 .hero-grid > *, .about-grid > *, .audience-box > *, .project-box > *, .instructor-grid > *,
 .support-grid > *, .gallery > *, .unit-grid > *, .contact-card > * { min-width: 0; }
 
@@ -184,16 +181,6 @@ header{position:sticky;top:0;z-index:50;padding:12px 0;pointer-events:none}
 
 
 /* ---------- 5. HERO ---------- */
-/* .hero{padding:64px 0 130px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative}
-h1{font-size:clamp(2.3rem,5.4vw,4.1rem);line-height:1.35;letter-spacing:-.5px;margin-bottom:32px}
-h1 em{
-  font-style:normal;color:var(--coral);
-  text-decoration:none var(--marigold) 3px;text-underline-offset:.2em;text-decoration-skip-ink:none;
-}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-
-/* ---------- 5. HERO ---------- */
 .hero{padding:64px 0 130px}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative}
 h1{font-size:clamp(2.3rem,5.4vw,4.1rem);line-height:1.35;letter-spacing:-.5px;margin-bottom:32px}
@@ -203,7 +190,6 @@ h1 em{
 }
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 
-/* کانتینر اصلی ربات (بزرگ و مربع برای حفظ تقارن دایره) */
 .hero-art{
   position: relative;
   width: 540px;
@@ -213,11 +199,10 @@ h1 em{
   place-items: center;
 }
 
-/* دایره خط‌چین */
 .hero-art::before{
   content: "";
   position: absolute;
-  inset: -20px; /* شعاع خط‌چین */
+  inset: -20px; 
   border: 3px dashed var(--coral);
   border-radius: 50%;
   opacity: .45;
@@ -225,7 +210,6 @@ h1 em{
   pointer-events: none;
 }
 
-/* شکل پس‌زمینه نارنجی (حالت مورف و ارگانیک اصلی) */
 .art-blob{
   position: absolute;
   width: 480px;
@@ -257,8 +241,6 @@ h1 em{
 .speech-2{background: var(--indigo); color: #fff;}
 .speech-3{background: var(--sage); color: #1f2430;}
 
-/* اصلاح مسیر چرخش حباب‌ها روی خط‌چین 
-   (عدد 230px نشان‌دهنده شعاع فاصله از مرکز است که متن‌ها را دقیقاً روی خط‌چین می‌اندازد) */
 .speech-1, .speech-2, .speech-3{
   top: 50%;
   left: 50%;
@@ -267,7 +249,6 @@ h1 em{
   animation: circleRotate 14s linear infinite;
 }
 
-/* اگر انیمیشن اصلی شما نیاز به تنظیم فاصله دارد، با transform روی محور X آن را تنظیم می‌کنیم */
 .speech-1{
   animation-delay: 0s;
   transform: rotate(0deg) translate(230px) rotate(0deg);
@@ -612,8 +593,6 @@ html[dir="rtl"] .rm-stop,html[dir="rtl"] .rm-finish,html[dir="rtl"] .rm-rider{le
 }
 .rm-finish .rm-label{--lx:-5cqw;--ly:6.6cqw}
 
-/* entrance: everything pops in one after another when the map scrolls into view.
-   (fill-mode is "backwards" so the final state is plain CSS and hover/active can still move things) */
 .js .rm-stage .rm-pin,.js .rm-stage .rm-label,.js .rm-stage .rm-mascot,.js .rm-stage .rm-flag,.js .rm-stage .rm-rider{opacity:0}
 .js .rm-stage.visible .rm-pin,.js .rm-stage.visible .rm-label,.js .rm-stage.visible .rm-flag,.js .rm-stage.visible .rm-rider{opacity:1}
 .js .rm-stage.visible .rm-mascot{opacity:var(--mo,.95)}
@@ -687,23 +666,6 @@ html[dir="rtl"] .rm-stop,html[dir="rtl"] .rm-finish,html[dir="rtl"] .rm-rider{le
   .rm-rider span,.rm-stop.active .rm-pin,.rm-panel.swap{animation:none}
 }
 
-/* ---------- 12. INSTRUCTOR ----------
-.instructor{background:var(--panel);border-block:2px solid var(--line);position:relative}
-.instructor-grid{display:grid;grid-template-columns:.6fr 1.4fr;gap:44px;align-items:center;margin-top:36px}
-.avatar{
-  width:100%;aspect-ratio:1/1;border-radius:var(--radius-lg);background:var(--indigo);
-  border:4px solid var(--ink);box-shadow:8px 8px 0 var(--marigold);
-  display:grid;place-items:center;font-size:64px;color:var(--paper);
-  transition:transform .3s var(--ease);
-}
-.avatar:hover{transform:rotate(-3deg) scale(1.03)}
-.instructor-bio p{color:var(--muted);font-size:15px;margin-bottom:14px;max-width:620px}
-.instructor-name{font-size:24px;font-weight:800;margin-bottom:4px}
-.instructor-role{color:var(--coral-deep);font-weight:700;font-size:14.5px;margin-bottom:18px}
-:root[data-theme="dark"] .instructor-role{color:var(--coral)}
-.cred-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.cred-chip{background:var(--indigo-soft);border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:700;transition:transform .2s var(--ease)}
-.cred-chip:hover{transform:translateY(-3px) rotate(-2deg)} */
 /* ---------- 12. INSTRUCTOR ---------- */
 .instructor{background:var(--panel);border-block:2px solid var(--line);position:relative}
 .instructor-grid{display:grid;grid-template-columns:.6fr 1.4fr;gap:44px;align-items:center;margin-top:36px}
@@ -774,14 +736,7 @@ footer{border-top:2px dashed var(--line);padding:28px 0;color:var(--muted);font-
   .hero-grid{display:block}
   .hero-grid > *{margin-top:70px}
   .hero-grid > *:first-child{margin-top:0}
-  /* on desktop the robot, blob and dashed ring are 480-540px and the speech bubbles orbit
-     around them by rotating + translating 230px from centre - all sized for a box far wider
-     than a phone screen. Mobile drops the orbit and just stacks bubbles above a small,
-     centred robot card, with the blob/ring shrunk down as a simple backdrop behind it. */
-  /* centring here uses inset + margin-inline:auto rather than left:50%/transform: the robot,
-     blob and ring each already have their own transform-based animation (a float, a wobble,
-     a spin), and a CSS animation fully replaces an element's transform while it plays - a
-     static "translateX(-50%)" for centring would just get overwritten every frame. */
+
   .hero-art{width:100%;max-width:260px;height:auto;margin:0 auto;display:flex;flex-direction:column;
     align-items:center;gap:10px;position:relative;padding-bottom:180px}
   .hero-art::before{inset:auto;width:200px;height:200px;top:auto;bottom:0;left:0;right:0;margin-inline:auto}
@@ -817,7 +772,7 @@ footer{border-top:2px dashed var(--line);padding:28px 0;color:var(--muted);font-
   .cta .wrap{padding:60px 20px}
 }
 @media (max-width:520px){
-  .brand{font-size:0;gap:0}         /* keep the logo mark, hide the name on tiny screens */
+  .brand{font-size:0;gap:0}        
   .nav{gap:6px;padding-inline:10px}
   .nav-right,.switcher{gap:6px}
   .nav-cta{padding:8px 14px;font-size:13px}
@@ -826,7 +781,6 @@ footer{border-top:2px dashed var(--line);padding:28px 0;color:var(--muted);font-
   .nav-quick a{padding:6px 7px}
 }
 
-/* جایگزین ساده‌ی بخش گالری (کامنت‌شده): یه خط ظریف که بخش پروژه رو از بخش مخاطب جدا نگه می‌داره */
 .section-divider{max-width:1100px;margin:56px auto;border-top:2px dashed var(--line);opacity:.6}
 
 /* ---------- 17. GALLERY (class photos/videos) ---------- */

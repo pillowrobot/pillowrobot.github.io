@@ -361,7 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuOverlay.addEventListener('click', toggleMenu);
   }
 
-  // بستن منو با کلیک روی لینک‌های داخل منو در موبایل
   const links = navLinks.querySelectorAll('a');
   links.forEach(link => {
     link.addEventListener('click', () => {
@@ -507,7 +506,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // نقشه راه: وقتی نقشه وارد دید شد، ایستگاه‌ها یکی‌یکی ظاهر می‌شن
   const rmStage = document.querySelector('.rm-stage');
   if (rmStage) {
     if ('IntersectionObserver' in window) {
@@ -628,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link: document.getElementById('rmPanelLink')
   };
   var LEVEL_OF = { t1: 'level1', t2: 'level2', t3: 'level3' };
-  var ICON_OF = { t1: '🚗', t2: '⛵', t3: '🚀' };            // term 1 goes by road, term 2 by sea, term 3 through space
+  var ICON_OF = { t1: '🚗', t2: '⛵', t3: '🚀' };            
   var ROAD_OF = { t1: stage.querySelector('#road1'), t2: stage.querySelector('#road2'), t3: stage.querySelector('#road3') };
   var cur = 0, timer = 0, raf = 0;
 
