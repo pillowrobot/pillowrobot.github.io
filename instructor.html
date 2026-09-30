@@ -11,8 +11,9 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<script>try{var l=localStorage.getItem('rubi-lang');if(l==='en'||l==='it'){document.documentElement.lang=l;document.documentElement.dir='ltr';}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>درباره من | ربات بالشی</title>
+<title data-i18n="title_instructor">درباره من | ربات بالشی</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
   
 <header>
   <div class="wrap nav">
-    <a href="#" class="brand"><img src="assets/logo.png" alt="لوگو ربات بالشی" style="height: 70px; width: auto; vertical-align: middle;">ربات بالشی</a>
+    <a href="#" class="brand"><img src="assets/logo.png" alt="لوگو ربات بالشی" data-i18n-alt="alt_logo" style="height: 70px; width: auto; vertical-align: middle;"><span data-i18n="brand">ربات بالشی</span></a>
     <div class="nav-quick">
       <a href="#curriculum" data-i18n="nav_curriculum">برنامه دوره</a>
       <a href="instructor.html" data-i18n="nav_instructor">درباره من</a>
@@ -36,14 +37,14 @@
       <a href="instructor.html" data-i18n="nav_instructor">درباره من</a>
     </nav>
     <div class="nav-right">
-      <!-- <div class="switcher">
+      <div class="switcher">
         <div class="lang-group" role="group" aria-label="Language">
           <button class="lang-btn" data-lang="fa" onclick="setLang('fa')">فا</button>
           <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
           <button class="lang-btn" data-lang="it" onclick="setLang('it')">IT</button>
         </div>
-        <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
-      </div> -->
+        <!-- <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button> -->
+      </div>
       <a href="#register" class="nav-cta" data-i18n="nav_cta">ثبت‌نام</a>
       <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks"><i></i><i></i><i></i><span class="sr-only" data-i18n="nav_menu">منو</span></button>
     </div>
@@ -60,7 +61,7 @@
 
       <div class="instructor-grid">
         <div class="avatar">
-          <img src="assets/arash.jpg" alt="عکس امید" onerror="this.remove(); this.parentElement.textContent='👨‍💻';">
+          <img src="assets/arash.jpg" alt="عکس امید" data-i18n-alt="alt_instructor" onerror="this.remove(); this.parentElement.textContent='👨‍💻';">
         </div>
         <div class="instructor-bio">
           <div class="instructor-name" data-i18n="instructor_name">امید</div>

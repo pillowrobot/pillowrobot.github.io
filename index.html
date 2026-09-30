@@ -12,9 +12,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ربات بالشی | دوره رباتیک و برنامه‌نویسی کودکان</title>
+<title data-i18n="title_home">ربات بالشی | دوره رباتیک و برنامه‌نویسی کودکان</title>
 
 <script>document.documentElement.classList.add('js');</script>
+<script>try{var l=localStorage.getItem('rubi-lang');if(l==='en'||l==='it'){document.documentElement.lang=l;document.documentElement.dir='ltr';}}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="brand"><img src="assets/logo.png" alt="لوگو ربات بالشی" style="height: 70px; width: auto; vertical-align: middle;">ربات بالشی</a>
+    <a href="#" class="brand"><img src="assets/logo.png" alt="لوگو ربات بالشی" data-i18n-alt="alt_logo" style="height: 70px; width: auto; vertical-align: middle;"><span data-i18n="brand">ربات بالشی</span></a>
     <div class="nav-quick">
       <a href="#curriculum" data-i18n="nav_curriculum">برنامه دوره</a>
       <a href="instructor.html" data-i18n="nav_instructor">درباره من</a>
@@ -39,14 +40,14 @@
       <a href="instructor.html" data-i18n="nav_instructor">درباره من</a>
     </nav>
     <div class="nav-right">
-      <!-- <div class="switcher">
+      <div class="switcher">
         <div class="lang-group" role="group" aria-label="Language">
           <button class="lang-btn" data-lang="fa" onclick="setLang('fa')">فا</button>
           <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
           <button class="lang-btn" data-lang="it" onclick="setLang('it')">IT</button>
         </div>
-        <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
-      </div> -->
+        <!-- <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button> -->
+      </div>
       <a href="#register" class="nav-cta" data-i18n="nav_cta">ثبت‌نام</a>
       <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks"><i></i><i></i><i></i><span class="sr-only" data-i18n="nav_menu">منو</span></button>
     </div>
@@ -71,14 +72,14 @@
           <div class="speech speech-1" data-i18n="speech_1">سلام! من ربات بالشی ام 👋</div>
           <div class="speech speech-2" data-i18n="speech_2">بیا با کمک من یه ربات بسازیم!</div>
           <div class="speech speech-3" data-i18n="speech_3">بیا با هم کدهای باحال بنویسیم!</div>
-        <img src="assets/pillowBot.png" alt="ربات بالشی" class="robot-head-img" data-depth="12" draggable="false">
+        <img src="assets/pillowBot.png" alt="ربات بالشی" data-i18n-alt="alt_robot_brand" class="robot-head-img" data-depth="12" draggable="false">
       </div>
     </div>
   </section>
 
   <!-- ABOUT / SOURCES -->
   <section class="about" id="about" style="position: relative;">
-     <img src="assets/pillowBot_majic.png" alt="ربات" class="moving-sticker pos-about-1" data-depth="14" draggable="false" style="width: 450px; top: 130px; left: 80px;">
+     <img src="assets/pillowBot_majic.png" alt="ربات" data-i18n-alt="alt_robot" class="moving-sticker pos-about-1" data-depth="14" draggable="false" style="width: 450px; top: 130px; left: 80px;">
     <div class="wrap">
       <div class="kicker" data-i18n="about_kicker">درباره دوره</div>
       <h2 data-i18n="about_h2" class="text-center">یادگیری قدم‌به‌قدم، از بازی تا کدنویسی واقعی</h2>
@@ -265,7 +266,7 @@
 
   <!-- CURRICULUM -->
   <section class="curriculum" id="curriculum" style="position: relative;">
-    <img src="assets/pillowBot_student.png" alt="ربات" class="moving-sticker pos-curr-1" data-depth="18" draggable="false" style="width: 400px; top: 50px; right: 850px;">
+    <img src="assets/pillowBot_student.png" alt="ربات" data-i18n-alt="alt_robot" class="moving-sticker pos-curr-1" data-depth="18" draggable="false" style="width: 400px; top: 50px; right: 850px;">
 
     <div class="wrap">
       <div class="kicker" data-i18n="curriculum_kicker">برنامه دوره</div>
@@ -275,7 +276,7 @@
       <div class="levels" id="curriculum-levels">
         <div class="level" id="level1">
           <div class="level-head" onclick="this.parentElement.classList.toggle('active')">
-            <div class="level-num">۱</div>
+            <div class="level-num" data-i18n="num1">۱</div>
             <div>
               <div class="level-title" data-i18n="level1_title"></div>
               <div class="level-sub" data-i18n="level1_sub"></div>
@@ -304,7 +305,7 @@
 
         <div class="level" id="level2">
           <div class="level-head" onclick="this.parentElement.classList.toggle('active')">
-            <div class="level-num">۲</div>
+            <div class="level-num" data-i18n="num2">۲</div>
             <div>
               <div class="level-title" data-i18n="level2_title"></div>
               <div class="level-sub" data-i18n="level2_sub"></div>
@@ -334,7 +335,7 @@
         <div class="level" id="level3">
         <div class="level-mascot"></div>
           <div class="level-head" onclick="this.parentElement.classList.toggle('active')">
-            <div class="level-num">۳</div>
+            <div class="level-num" data-i18n="num3">۳</div>
             <div>
               <div class="level-title" data-i18n="level3_title">🤖 دنیای تجربه — ربات واقعی</div>
               <div class="level-sub" data-i18n="level3_sub">کدی که این‌بار واقعاً حرکت می‌کنه!</div>
@@ -488,7 +489,7 @@
           <div class="age-line" data-i18n="age_line1">سطح: مقدماتی</div>
           <div class="age-line" data-i18n="age_line2">پیش‌نیاز: ندارد</div>
         </div> -->
-        <img src="assets/pillowBot.png" alt="ربات بالشی" class="robot-head-img" data-depth="12" draggable="false">
+        <img src="assets/pillowBot.png" alt="ربات بالشی" data-i18n-alt="alt_robot_brand" class="robot-head-img" data-depth="12" draggable="false">
       </div>
     </div>
   </section>
@@ -531,7 +532,7 @@
       <!-- <p data-i18n="cta_p">برای اطلاع از زمان برگزاری، ظرفیت و نحوه ثبت‌نام با ما در تماس باش.</p> -->
       <p></p>
       <p></p>
-      <a href="https://t.me/Pill0wman" class="btn btn-solid" onclick="window.location.href='https://t.me/Pill0wman'; return false;">اطلاعات و ثبت‌نام</a>
+      <a href="https://t.me/Pill0wman" class="btn btn-solid" onclick="window.location.href='https://t.me/Pill0wman'; return false;" data-i18n="cta_btn">اطلاعات و ثبت‌نام</a>
     </div>
   </section>
 </main>
